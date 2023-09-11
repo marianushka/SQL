@@ -1,0 +1,23 @@
+SELECT * FROM superstore
+ORDER BY price;
+
+SELECT 
+    SUM(price) AS total_price,
+    AVG(price) AS average_price,
+    MIN(price) AS min_price,
+    MAX(price) AS max_price,
+    COUNT(*) AS item_count
+FROM superstore;
+
+SELECT 
+    SUM(price) AS total_price_kitchen_supplies,
+    AVG(price) AS average_price_kitchen_supplies,
+    MIN(price) AS min_price_kitchen_supplies,
+    MAX(price) AS max_price_kitchen_supplies,
+    COUNT(*) AS item_count_kitchen_supplies
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+SELECT AVG(stock_quantity) AS average_stock_electronics_high_rated
+FROM superstore
+WHERE category = 'Electronics' AND average_rating > 4.5;
